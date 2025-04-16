@@ -73,16 +73,16 @@ function playGame() {
 	});
 
 	game = setInterval(() => {
-		if (keys.ArrowUp) {
+		if (keys.ArrowUp || keys.w) {
 			dy = -player.max_speed;
 		}
-		if (keys.ArrowDown) {
+		if (keys.ArrowDown || keys.s) {
 			dy = player.max_speed;
 		}
-		if (keys.ArrowLeft) {
+		if (keys.ArrowLeft || keys.a) {
 			dx = -player.max_speed;
 		}
-		if (keys.ArrowRight) {
+		if (keys.ArrowRight || keys.d) {
 			dx = player.max_speed;
 		}
 
@@ -237,7 +237,7 @@ class Goal extends Rect {
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 const WIDTH = canvas.width = 180; //180
-const HEIGHT = canvas.height = 720; //720
+const HEIGHT = canvas.height = 600; //720
 const bounds = canvas.getBoundingClientRect();
 const offset_x = 10;
 const offset_y = 10;
